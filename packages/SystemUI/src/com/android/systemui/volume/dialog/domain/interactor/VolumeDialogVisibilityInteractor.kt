@@ -144,6 +144,8 @@ constructor(
      * [dialogVisibility].
      */
     fun dismissDialog(reason: Int) {
+        // TEST-PATCH-DIAG (temporary, remove)
+        android.util.Log.w("TESTPATCH-DIAG", "VolumeDialog dismissDialog(reason=$reason)", Throwable())
         updateVisibility { Dismissed(reason) }
     }
 
@@ -163,6 +165,8 @@ constructor(
                 currentVisibility
             } else {
                 tracer.traceVisibilityStart(newVisibility)
+                // TEST-PATCH-DIAG (temporary, remove)
+                android.util.Log.w("TESTPATCH-DIAG", "VolumeDialog visibility -> $newVisibility", Throwable())
                 newVisibility
             }
         }

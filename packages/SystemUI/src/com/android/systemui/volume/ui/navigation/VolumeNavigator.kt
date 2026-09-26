@@ -116,6 +116,8 @@ constructor(
             content = { dialog ->
                 LaunchedEffect(dialog) {
                     dialog.setOnDismissListener {
+                        // TEST-PATCH-DIAG (temporary, remove)
+                        android.util.Log.w("TESTPATCH-DIAG", "VolumePanel dialog onDismiss", Throwable())
                         uiEventLogger.log(VolumePanelUiEvent.VOLUME_PANEL_GONE)
                         volumePanelGlobalStateInteractor.setVisible(false)
                     }

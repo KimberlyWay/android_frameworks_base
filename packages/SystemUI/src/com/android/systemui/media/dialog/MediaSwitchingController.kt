@@ -1100,6 +1100,8 @@ constructor(
                 if (newState == PlaybackState.STATE_STOPPED &&
                         mCurrentState != PlaybackState.STATE_NONE
                 ) {
+                    // TEST-PATCH-DIAG (temporary, remove)
+                    Log.w("TESTPATCH-DIAG", "MediaSwitchingController.onMediaStoppedOrPaused state=$newState prev=$mCurrentState", Throwable())
                     mCallback.onMediaStoppedOrPaused()
                 }
                 mCurrentState = newState

@@ -33,6 +33,8 @@ constructor(
         get() = repository.globalState
 
     fun setVisible(isVisible: Boolean) {
+        // TEST-PATCH-DIAG (temporary, remove)
+        android.util.Log.w("TESTPATCH-DIAG", "VolumePanel setVisible($isVisible)", Throwable())
         repository.updateVolumePanelState { it.copy(isVisible = isVisible) }
     }
 }

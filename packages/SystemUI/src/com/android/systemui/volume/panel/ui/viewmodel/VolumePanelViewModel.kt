@@ -127,6 +127,8 @@ class VolumePanelViewModel(
     }
 
     fun dismissPanel() {
+        // TEST-PATCH-DIAG (temporary, remove)
+        android.util.Log.w("TESTPATCH-DIAG", "VolumePanelViewModel.dismissPanel", Throwable())
         volumePanelGlobalStateInteractor.setVisible(false)
     }
 

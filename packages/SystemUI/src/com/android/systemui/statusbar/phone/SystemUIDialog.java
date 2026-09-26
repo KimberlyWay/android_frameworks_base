@@ -553,6 +553,8 @@ public class SystemUIDialog extends AlertDialog {
 
     @Override
     public void dismiss() {
+        // TEST-PATCH-DIAG (temporary, remove): who dismisses which dialog
+        android.util.Log.w("TESTPATCH-DIAG", "SystemUIDialog.dismiss: " + getClass().getSimpleName(), new Throwable());
         mDelegate.beforeDismiss(this);
         super.dismiss();
     }
